@@ -1,0 +1,40 @@
+# Router Configuration (Router-on-a-Stick)
+
+en
+conf t
+interface g0/0
+no shutdown
+
+interface g0/0.10
+encapsulation dot1q 10
+ip address 192.168.1.62 255.255.255.192
+
+interface g0/0.20
+encapsulation dot1q 20
+ip address 192.168.1.126 255.255.255.192
+
+end
+wr
+
+# Switch Configuration
+
+en
+conf t
+vlan 10
+name company1
+vlan 20
+name company2
+
+interface range fa0/1-2
+switchport mode access
+switchport access vlan 10
+
+interface range fa0/3-4
+switchport mode access
+switchport access vlan 20
+
+interface fa0/24
+switchport mode trunk
+
+end
+wr
