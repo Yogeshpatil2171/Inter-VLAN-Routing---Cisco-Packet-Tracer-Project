@@ -59,7 +59,7 @@ This project demonstrates **Inter-VLAN Routing** using the **Router on a Stick**
 ---
 
 ## ✨ Author
--Kaushalya Jayasekara
+-Yogesh patil
 - Created as part of practical networking exercises.
 
 ---
